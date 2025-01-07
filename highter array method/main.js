@@ -1,3 +1,6 @@
+// FOREach
+
+
 const fruit = ["apple","banana","suqaar"];
 
 fruit.forEach((fruit)=>{
@@ -32,3 +35,7 @@ student.forEach((student)=>{
         console.log(student[key])
         }
 })
+
+// Map
+
+
