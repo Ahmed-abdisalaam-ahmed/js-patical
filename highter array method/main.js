@@ -44,8 +44,24 @@
 // console.log(forNumber)
 
 
-const fruit = ["apple","banana","jerry"];
-const lenght = fruit.map((fruit)=>fruit +" "+ fruit.length)
-console.log("this fruits is "+ lenght)
+// const fruit = ["apple","banana","jerry"];
+// const lenght = fruit.map((fruit)=>fruit +" "+ fruit.length)
+// console.log("this fruits is "+ lenght)
 
 
+// filter
+
+// const eventNumber = [0,1,2,3,4,5,6,7,8]
+// const Number = eventNumber.filter((eventNumber)=> eventNumber % 2===0);
+
+// console.log(Number);
+
+// const scoreGrade = [40,50,60,70,80,90]
+// const scored = scoreGrade.filter((scoreGrade)=> scoreGrade >= 60)
+// console.log(scored)
+
+// recude
+
+const tirooyin = [200,200,700];
+const xisaabid = tirooyin.reduce((iskudarka,tiro)=> iskudarka * tiro,1)
+console.log(xisaabid)
