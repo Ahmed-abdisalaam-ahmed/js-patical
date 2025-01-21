@@ -17,20 +17,21 @@
 // greet('abdisalaam','30 ',' eid');
 
 // function return
-// function add (a,b){
-//     return a * b;
-// }
-// let result = (add (20,30))
+function add (width,height = 4){
+    alert("alert is width and height");
+    return width * height;
+}
+let result = (add (20))
 
-// console.log(result / 5);
+console.log(result);
 
 // function experssion
 
-const greet = function (name){
-    console.log("hello " + name)
-}
-greet("halimo")
-greet("salah");
+// const greet = function (name){
+//     console.log("hello " + name)
+// }
+// greet("halimo")
+// greet("salah");
 
 // functionkana waa faction kii oo varible laga horyseeyey 
 
