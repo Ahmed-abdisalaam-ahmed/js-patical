@@ -1,0 +1,18 @@
+{
+    "id": 1,
+    "name": "shehab",
+    "age": 20,
+    "city": "Pune",
+    "orders": [
+        {
+            "id": 1,
+            "name": "order1",
+            "price": 100
+        },
+        {
+            "id": 2,
+            "name": "order2",
+            "price": 200
+        }
+    ]
+}
