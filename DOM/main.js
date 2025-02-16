@@ -49,4 +49,47 @@ function additem(){
 
 function RemoveItem(){
 
+    if(list.lastChild){
+        list.removeChild(list.lastChild)
+    }
+    else{
+        alert("ka baxee dee maxaa ku daagay!")
+    }
+
+}
+
+// setAttribute Element : set a value of an attribute 
+
+function ChangeImage(){
+
+    const change = document.querySelector('#IDimage')
+
+    const url = prompt("enter the address of image")
+
+    change.setAttribute('src', url)
+
+}
+
+
+// setAttribute style 
+
+function changestyle(){
+
+    const header = document.querySelector('#header')
+    const text = document.querySelector('.text')
+
+    header.style.color = "skyblue";
+    text.style.fontSize = "20px";
+    text.style.border = "1px solid black";
+    text.style.padding = "20px";
+    text.style.backgroundColor = "purple";
+}
+
+function setWhitemode(){
+    document.body.style.backgroundColor = 'white';
+    document.body.style.color = "black"
+}
+function setDarkmode(){
+    document.body.style.backgroundColor = 'black';
+    document.body.style.color = "white";
 }
