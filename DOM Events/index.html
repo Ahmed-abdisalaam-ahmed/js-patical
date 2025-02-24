@@ -10,27 +10,40 @@
         }
         .container{
             background-color: white;
-            text-align: center;
-            width: 500px;
+            width: 400px;
+            height: 300px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            /* justify-content: center;
+            align-items: center; */
             border-radius: 20px;
-            padding: 30px;
+            padding: 40px 20px;
             margin-top: 10rem;
+            font-weight: 500;
         }
-        p{
+        /* p{
             border-bottom: 1px solid black;
+        } */
+        input{
+            font-size: 1rem;
+            margin-top: 1rem;
+            border-radius:10px ;
+            outline: none;
+        }
+        .valid{
+            border: 4px solid green;
+        }
+        .invalid{
+            border: 4px solid red;
         }
     </style>
 </head>
 <body>
-    <!-- <h1>dom events</h1>
+    <h1>dom events</h1>
     <button id="btn1"> please click the button</button>
     <button id="btn2"> REmove the button</button>
-     -->
+    
 
 
 <!-- <div class="container">
@@ -55,6 +68,30 @@
 
     <p id="soobixid">Xogta soo Baxaysa</p>
 </div> -->
+
+<!-- validation From -->
+ <div class="container">
+    <form id="registrotion">
+        <label for="username">Enter Your Name:</label>
+        <input  type="username" name="name" id="username">
+<br>
+        <label for="Email">Enter Your Email:</label>
+        <input type="email" name="Email" id="Email">
+<br>
+        <label for="password">Enter Your password:</label>
+        <input type="password" id="password" name="password">
+<br>
+        <label for="ConfirmPassword">Confirm Your password:</label>
+        <input type="password" id="ConfirmPassword" name="ConfirmPassword">
+<br>
+<br>   
+        <button type="submit" id="register">Register</button>
+    </form>
+    <p id="error" style="color:red"></p>
+    <p id="success" style="color:green"></p>
+ </div>
+
+
 
 
 
