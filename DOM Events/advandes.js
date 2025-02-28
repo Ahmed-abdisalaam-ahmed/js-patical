@@ -1,110 +1,101 @@
-const form= document.querySelector("#registrotion");
+const form = document.querySelector("#registrotion");
 
-const username = document.querySelector('#username');
-const Email = document.querySelector('#Email');
-const password = document.querySelector('#password');
-const ConfirmPassword = document.querySelector('#ConfirmPassword');
+const username = document.querySelector("#username");
+const Email = document.querySelector("#Email");
+const password = document.querySelector("#password");
+const confirmpassword = document.querySelector("#ConfirmPassword");
 
 const error = document.querySelector("#error");
 const success = document.querySelector("#success");
 
-form.addEventListener('submit', function(Event){
+form.addEventListener("submit", function (Event) {
+  Event.preventDefault();
 
-    Event.preventDefault();
+  error.textContent = "";
+  success.textContent = "";
 
-    error.textContent = ''
-    success.textContent = ''
+  const isUsernamevalid = validUsername();
+  const isEmailvalid = validEmail();
+  const ispasswordvalid = validPassword();
+  const isconfirmpassword = validConfirm();
 
+  if(!isUsernamevalid){
+    username.focus();
+    return
+  }
+  else if(!isEmailvalid){
+    Email.focus();
+    return
+  }
+  else if(!ispasswordvalid){
+    password.focus();
+    return
+  }
+  else if(!isconfirmpassword){
+    confirmpassword.focus();
+    return
+  }
 
-    const aValidusername = setvalidusername();
-    const availdEmail = SetEmailvalidate();
-    const ispasswordvalid = Setpasswordvalid();
-    const avalidconfirmpassword = setconfirmpassword(); 
-    
-    if(!aValidusername){
-        username.focus()
-        return
-    }else if(!availdEmail){
-        Email.focus()
-        return
-    }else if(!ispasswordvalid){
-        password.focus()
-        return
-    }else if(!avalidconfirmpassword){
-        ConfirmPassword.focus();
-        return
-    }
-
-
-
-    success.textContent = 'registor is successfully!'
+  const saxiix = success.textContent = "registor is successfully!";
+  alert(saxiix)
 });
 
-function setvalidusername(){
-    if(username.value.trim() === ''){
-        // Error
-        SetError(username, 'Username is requid!')
-        return false
-    }
-    else{
-        // success
-        SetSuccess(username)
-        return true
-    }
+// username
+
+function validUsername() {
+  if (username.value.trim() === "") {
+    setError(username, "Username is not reqiued");
+    return false;
+  } else {
+    setSuccess(username);
+    return true;
+  }
+}
+// Email
+function validEmail() {
+  const Emailpattens = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  if (!Email.value.match(Emailpattens)) {
+    setError(Email, "Email is not correct ,try again!");
+    return false;
+  } else {
+    setSuccess(Email);
+    return true;
+  }
 }
 
-function SetEmailvalidate(){
-    const EmailConfig = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+// Password
 
-    if(!Email.value.match(EmailConfig)){
-        SetError(Email , 'The email is not correct , try again !');
-        return false
-    }else{
-        SetSuccess(Email)
-        return true
-    }
+function validPassword() {
+  if (password.value.length < 8) {
+    setError(password, "password has be 8 characters");
+    return false;
+  } else {
+    setSuccess(password);
+    return true;
+  }
 }
 
-function Setpasswordvalid(){
-    if(password.value.length < 8){
-        SetError(password ,'password has be a least 8 characater');
-        return false
-    }
-    else{
-        SetSuccess(password);
-        return true
-    }
+// Confirm password
+
+function validConfirm() {
+    if (confirmpassword.value.trim() === '' || password.value.trim()=== ''){
+    setError(confirmpassword, "make password same");
+    return false;
+  } else {
+    setSuccess(confirmpassword);
+    return true;
+  }
+}
+//
+function setError(element, message) {
+  element.classList.add("invalid");
+  element.classList.remove("valid");
+
+  error.textContent = message;
 }
 
-function setconfirmpassword(){
-    if(password.value.trim() === ""  || ConfirmPassword.value.trim() === ""){
-        SetError(ConfirmPassword , 'password is not much')
-        return false
-    }
-
-
-
-    if(password.value !== ConfirmPassword.value){
-        SetError(ConfirmPassword, 'password is not much')
-        return false
-    }
-    else {
-        SetSuccess(ConfirmPassword)
-        return true
-    }
-}
-
-
-
-
-function SetError(element,message){
-    element.classList.add('invalid')
-    element.classList.remove('valid')
-
-    error.textContent = message;
-}
-
-function SetSuccess(element){
-    element.classList.add('valid')
-    element.classList.remove('invalid')
+function setSuccess(element) {
+  element.classList.add("valid");
+  element.classList.remove("invalid");
 }
